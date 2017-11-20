@@ -201,19 +201,19 @@
 	            			</div>
             			</div>
             		</md-card-title>
-            		<md-card-content>
+            		<div>
 						<div layout="row" layout-sm="column" layout-xs="column" flex="100" flex-sm="100" layout-margin>
 							<div layout-sm="row" layout-xs="row">
-								<div flex="40" flex-sm="40" flex-xs="60" layout-xs="column" layout-sm="column" layout="column">
-									<div flex ng-show="house.cb6" layout="row" class="md-media-lg card-media foto">
+								<md-card-title-media flex="40" flex-sm="40" flex-xs="60" layout-xs="column" layout-sm="column" layout="column">
+									<div flex ng-show="house.cb6" layout="row" class="photo-slider md-media-lg card-media foto">
 										<img class="photo-slider" ng-src="{{house.fotos[0]}}" />
             	  					</div>
-				  					<div flex ng-hide="house.cb6" layout="row" class="md-media-lg card-media foto">
+				  					<div flex ng-hide="house.cb6" layout="row" class="photo-slider md-media-lg card-media foto">
 				  						<img class="photo-slider" ng-src="{{house.fotos[1]}}" />
             	  					</div>
 				  					<md-switch ng-model="house.cb6" aria-label="Switch 6" ng-change="onChange(house.cb6)">
 				  					</md-switch>
-            					</div>
+            					</md-card-title-media>
             					<div hide-lg hide-sm hide-md hide-xl layout-xs="row">
             						<div layout-xs="column">
 	            						<p></p>
@@ -232,7 +232,7 @@
 									</div>
 								</div>
 							</div>
-							<div layout="column" flex="60" flex-xs="100" flex-sm="100">
+							<md-card-content layout="column" flex="60" flex-xs="100" flex-sm="100">
 								<div layout="row" flex="100">
 									<div layout="column" flex="50">
 									   <md-list-item class="md-2-line md-no-proxy-1">
@@ -295,17 +295,17 @@
 		    	    			</div>
 		    	    		</div>
 						</div>
-            	
-            	<md-card-actions layout="column" flex-offset-xs="60" flex-offset-sm="70" flex-offset="80" flex-xs="20"  flex="20">
-            	    <md-button class="md-raised" ng-mouseover="showAlert($event)">
-            	    	<a class="a-stile" href="mailto:info@lensooni.it?subject=Richiesta di Contatto&body=Ciao Lensooni, sono lo studente con email universitaria:                                              
+						<md-card-actions layout="column" flex-offset-xs="60" flex-offset-sm="70" flex-offset="80" flex-xs="20"  flex="20">
+							<md-button class="md-raised" ng-mouseover="showAlert($event)">
+								<a class="a-stile" href="mailto:info@lensooni.it?subject=Richiesta di Contatto&body=Ciao Lensooni, sono lo studente con email universitaria:                                              
 	            	    	                                               . Ti scrivo per chiederti il contatto della casa con codice identificativo:">Contatta!
-            	    	</a>
-             	    </md-button>
-            	</md-card-actions>
-            	</md-card-content>
-		    </md-card>
-		</div>
+            	    			</a>
+							</md-button>
+						</md-card-actions>
+					</md-card-content>
+					</div>
+				</md-card>
+		    </div>
     </body>
 </html>
 
