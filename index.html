@@ -202,14 +202,14 @@
             			</div>
             		</md-card-title>
             		<div>
-						<div layout="row" layout-sm="column" layout-xs="column" flex="100" flex-sm="100" layout-margin>
+						<div layout="row" layout-sm="column" layout-xs="column" flex="100" flex-sm="100" layout-padding>
 							<div layout-sm="row" layout-xs="row">
 								<md-card-title-media flex="40" flex-sm="40" flex-xs="60" layout-xs="column" layout-sm="column" layout="column">
 									<div flex ng-show="house.cb6" layout="row" class="photo-slider md-media-lg card-media foto">
-										<img class="photo-slider" ng-src="{{house.fotos[0]}}" />
+										<img class="md-media-lg" ng-src="{{house.fotos[0]}}" />
             	  					</div>
 				  					<div flex ng-hide="house.cb6" layout="row" class="photo-slider md-media-lg card-media foto">
-				  						<img class="photo-slider" ng-src="{{house.fotos[1]}}" />
+				  						<img class="md-media-lg" ng-src="{{house.fotos[1]}}" />
             	  					</div>
 				  					<md-switch ng-model="house.cb6" aria-label="Switch 6" ng-change="onChange(house.cb6)">
 				  					</md-switch>
@@ -292,9 +292,7 @@
 		    	                			</div>
 										</md-list-item>
 									</div>
-		    	    			</div>
-		    	    		</div>
-						</div>
+								</div>
 						<md-card-actions layout="column" flex-offset-xs="60" flex-offset-sm="70" flex-offset="80" flex-xs="20"  flex="20">
 							<md-button class="md-raised" ng-mouseover="showAlert($event)">
 								<a class="a-stile" href="mailto:info@lensooni.it?subject=Richiesta di Contatto&body=Ciao Lensooni, sono lo studente con email universitaria:                                              
