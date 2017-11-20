@@ -17,18 +17,21 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!-- style="position:fixed;z-index: 1030;" -->
     </head>
-    <body ng-app="ProjectApp" ng-controller="MyCtrl">
+    <body ng-app="ProjectApp" ng-controller="MyCtrl"  style="background-color: #424242;" >
         <div class="sfondo" layout-sm="row" layout="row" layout-padding ng-cloak><br/>
 	        <div hide-xs flex="30">
 		        <md-card class="white" flex="100">
-		        	<div class="md-inline-form" layout="row" flex-offset="20" flex-sm="70" flex="80"ng-cloak>
+		        <md-card-content>
+		        	<div layout="row" flex-offset="20" flex-sm="70" flex="80"ng-cloak>
 						<md-input-container>
-							<label>Città</label>
+							<label>Citta</label>
 							<input ng-model="searchText">
 						</md-input-container>
    					</div>
+		        </md-card-content>
    					</md-card>
    					<md-card class="white" flex="100">
+   					<md-card-content>
    					<div layout="row" flex-offset="20" flex="80"ng-cloak>
 	   	                <md-input-container>
                 	                		<label>Posto</label>
@@ -40,8 +43,10 @@
 											</md-select>
 										</md-input-container>
    					</div>
+   					</md-card-content>
 		        </md-card>
 				<md-card class="white" flex="100">
+				<md-card-content>
 					<div layout="row" flex="100">
 						<div layout-sm="column" layout="column" flex-offset="20" flex="40">
 							<md-input-container layout="row" flex-sm="10" flex="20">
@@ -84,6 +89,7 @@
 							</md-button>
 						</div>
 					</div>
+				</md-card-content>
 				</md-card>
     		</div>
 
@@ -99,9 +105,9 @@
 					</md-toolbar>
 					<md-content layout-padding ng-controller="LeftCtrl">
 					<div layout="column">
-						<div class="md-inline-form" layout="row" flex-offset="20" flex-sm="70" flex="80"ng-cloak>
+						<div layout="row" flex-offset="20" flex-sm="70" flex="80"ng-cloak>
 							<md-input-container>
-								<label>Città</label>
+								<label>Citta</label>
 								<input ng-model="searchText">
 							</md-input-container>
    						</div>
@@ -194,16 +200,16 @@
 								<i class="material-icons md-48">euro_symbol</i>
 	            			</div>
             			</div>
-					</md-card-title>
-            	<md-card-title-media>
+            		</md-card-title>
+            		<md-card-content>
 						<div layout="row" layout-sm="column" layout-xs="column" flex="100" flex-sm="100" layout-margin>
 							<div layout-sm="row" layout-xs="row">
 								<div flex="40" flex-sm="40" flex-xs="60" layout-xs="column" layout-sm="column" layout="column">
-									<div flex ng-show="house.cb6" layout="row" class="photo-slider md-media-lg card-media foto">
-										<img ng-src="{{house.fotos[0]}}" />
+									<div flex ng-show="house.cb6" layout="row" class="md-media-lg card-media foto">
+										<img class="photo-slider" ng-src="{{house.fotos[0]}}" />
             	  					</div>
-				  					<div flex ng-hide="house.cb6" layout="row" class="photo-slider md-media-lg card-media foto">
-				  						<img ng-src="{{house.fotos[1]}}" />
+				  					<div flex ng-hide="house.cb6" layout="row" class="md-media-lg card-media foto">
+				  						<img class="photo-slider" ng-src="{{house.fotos[1]}}" />
             	  					</div>
 				  					<md-switch ng-model="house.cb6" aria-label="Switch 6" ng-change="onChange(house.cb6)">
 				  					</md-switch>
@@ -289,16 +295,15 @@
 		    	    			</div>
 		    	    		</div>
 						</div>
-            	</md-card-title-media>
-            	<md-card-actions layout="column">
-            	<div flex-offset-xs="60" flex-offset-sm="70" flex-offset="80" flex-xs="20"  flex="20">
+            	
+            	<md-card-actions layout="column" flex-offset-xs="60" flex-offset-sm="70" flex-offset="80" flex-xs="20"  flex="20">
             	    <md-button class="md-raised" ng-mouseover="showAlert($event)">
             	    	<a class="a-stile" href="mailto:info@lensooni.it?subject=Richiesta di Contatto&body=Ciao Lensooni, sono lo studente con email universitaria:                                              
 	            	    	                                               . Ti scrivo per chiederti il contatto della casa con codice identificativo:">Contatta!
             	    	</a>
              	    </md-button>
-            	</div>
             	</md-card-actions>
+            	</md-card-content>
 		    </md-card>
 		</div>
     </body>
