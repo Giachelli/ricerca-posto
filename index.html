@@ -1,8 +1,356 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	</head>
-	<body>
-		<h1> PAGINA IN MANUTENZIONE...PRESTO TORNIAMO!</h1>
-	</body>
+        <meta name="viewport" content="initial-scale=1" />
+        <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+        <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-aria/angular-aria.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-messages/angular-messages.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-material/angular-material.min.js"></script>
+        <script type="text/javascript" src="bower_components/moment/moment.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+        <script type="text/javascript" src="index.js"></script>
+        <link href="css/style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- style="position:fixed;z-index: 1030;" -->
+    </head>
+    <body ng-app="ProjectApp" ng-controller="MyCtrl">
+        <div class="sfondo" layout-sm="row" layout="row" layout-padding ng-cloak><br/>
+	        <div hide-xs flex="30">
+		        <md-card class="white" flex="100">
+		        	<div class="md-inline-form" layout="row" flex-offset="20" flex-sm="70" flex="80"ng-cloak>
+						<md-input-container>
+							<label>Città</label>
+							<input ng-model="searchText">
+						</md-input-container>
+   					</div>
+   					</md-card>
+   					<md-card class="white" flex="100">
+   					<div layout="row" flex-offset="20" flex="80"ng-cloak>
+	   	                <md-input-container>
+                	                		<label>Posto</label>
+											<md-select name="Posti Letto" ng-model="searchPosto">
+                	                    		<md-option><em></em></md-option>
+												<md-option ng-repeat="posto in posti" ng-value="posto">
+												{{posto}}
+												</md-option>
+											</md-select>
+										</md-input-container>
+   					</div>
+		        </md-card>
+				<md-card class="white" flex="100">
+					<div layout="row" flex="100">
+						<div layout-sm="column" layout="column" flex-offset="20" flex="40">
+							<md-input-container layout="row" flex-sm="10" flex="20">
+								<label>Giorno</label>
+								<md-select name="Posti Letto" ng-model="searchMese.giorno">
+									<md-option><em></em></md-option>
+									<md-option ng-repeat="giorno in giorni" ng-value="giorno">
+									{{giorno}}
+									</md-option>
+								</md-select>
+							</md-input-container>
+							<md-input-container layout="row" flex="20">
+								<label>Mese</label>
+								<md-select name="Posti Letto" ng-model="searchMese.mese">
+									<md-option><em></em></md-option>
+									<md-option ng-repeat="mese in mesi" ng-value="mese">
+									{{mese}}
+									</md-option>
+								</md-select>
+							</md-input-container>
+							<md-input-container layout="row" flex="20">
+								<label>Anno</label>
+								<md-select name="Posti Letto" ng-model="searchMese.anno">
+									<md-option><em></em></md-option>
+									<md-option ng-repeat="anno in anni" ng-value="anno">
+									{{anno}}
+									</md-option>
+								</md-select>
+							</md-input-container>
+						</div>
+						<div layout="column" flex-offset="10" flex="20">
+							<p></p>
+							<p></p>  
+							<md-button ng-click="changeResearch()" class="md-fab-red" aria-label="Eat cake">
+								<md-icon><i class="material-icons">search</i></md-icon>
+							</md-button>
+							<p></p>
+							<md-button ng-click="resetDate()" class="md-fab-red" aria-label="Eat cake">
+								<md-icon><i class="material-icons">delete_forever</i></md-icon>
+							</md-button>
+						</div>
+					</div>
+				</md-card>
+    		</div>
+
+    		<div hide-sm hide-md hide-lg flex-xs="5"ng-cloak>
+				<md-sidenav
+					class="md-sidenav-left"
+					md-component-id="left"
+					md-is-locked-open="$mdMedia('gt-md')"
+					md-whiteframe="4">
+
+					<md-toolbar class="md-theme-indigo" style="background-color: #EF5350;">
+						<h1 class="md-toolbar-tools">Cerca posto</h1>
+					</md-toolbar>
+					<md-content layout-padding ng-controller="LeftCtrl">
+					<div layout="column">
+						<div class="md-inline-form" layout="row" flex-offset="20" flex-sm="70" flex="80"ng-cloak>
+							<md-input-container>
+								<label>Città</label>
+								<input ng-model="searchText">
+							</md-input-container>
+   						</div>
+						<div layout="row" flex-offset="20" flex="80"ng-cloak>
+	   	            	    <md-input-container>
+                		                		<label>Posto</label>
+												<md-select name="Posti Letto" ng-model="searchPosto">
+                		                    		<md-option><em></em></md-option>
+													<md-option ng-repeat="posto in posti" ng-value="posto">
+													{{posto}}
+													</md-option>
+												</md-select>
+											</md-input-container>
+   						</div>
+						<div layout-sm="column" layout="column" flex-offset="20" flex="40">
+								<md-input-container layout="row" flex-sm="10" flex="20">
+									<label>Giorno</label>
+									<md-select name="Posti Letto" ng-model="searchMese.giorno">
+										<md-option><em></em></md-option>
+										<md-option ng-repeat="giorno in giorni" ng-value="giorno">
+										{{giorno}}
+										</md-option>
+									</md-select>
+								</md-input-container>
+								<md-input-container layout="row" flex="20">
+									<label>Mese</label>
+									<md-select name="Posti Letto" ng-model="searchMese.mese">
+										<md-option><em></em></md-option>
+										<md-option ng-repeat="mese in mesi" ng-value="mese">
+										{{mese}}
+										</md-option>
+									</md-select>
+								</md-input-container>
+								<md-input-container layout="row" flex="20">
+									<label>Anno</label>
+									<md-select name="Posti Letto" ng-model="searchMese.anno">
+										<md-option><em></em></md-option>
+										<md-option ng-repeat="anno in anni" ng-value="anno">
+										{{anno}}
+										</md-option>
+									</md-select>
+								</md-input-container>
+							</div>
+						<md-button ng-click="changeResearch()"  hide-gt-md>
+						Cerca casa
+						</md-button>
+						<p hide show-gt-md>
+						This sidenav is locked open on your device. To go back to the default behavior,
+						narrow your display.
+        				</p>
+					</div>
+					</md-content>
+				</md-sidenav>
+				<div flex="100">
+				<md-button ng-click="toggleLeft()" class="md-fab-transparent" hide-gt-md>
+					<i class="material-icons-transparent">search</i>
+				</md-button>
+				</div>
+    		</div>
+
+	        <div layout-wrap flex-xs="95" flex-sm="70" flex="70" layout="row">
+	        	<md-card flex="100"  ng-repeat="house in houses | filter:searchText | filter:searchPosto | filter: dataDisp">
+            		<md-card-title style="background-color: #ff8a65">
+						<div flex-xs="50" flex="40">
+							<md-card-title-text>
+<!--
+                        <h2  class="md-toolbar-tools">
+                        	<span>Compila o scarica il form per Facebook cliccando il bottone a destra</span>
+                    	</h2>
+-->
+            	    			<span class="md-headline">{{house.citta}}</span>
+								<span class="md-subhead">{{house.nome}}</span>
+							</md-card-title-text>
+            			</div>
+						<div layout="row" flex-xs="50" flex-sm="35" flex="40">
+							<span class="md-headline">id: {{house.codice_id}} </span>
+            			</div>
+						<div hide-xs layout="row" flex="20" flex-xs="40">
+							<div layout="column">
+								<div ng-show="house.prezzo_letto!=''" layout="row">
+									<span class="md-headline">{{house.prezzo_letto}}</span>
+									<span class="md-subhead">letto</span>
+								</div>
+								<div ng-show="house.prezzo_divano!=''" layout="row">
+									<span class="md-headline">{{house.prezzo_divano}}</span>
+									<span class="md-subhead">divano</span>
+								</div>
+								</div>
+								<div layout="column">
+								<i class="material-icons md-48">euro_symbol</i>
+	            			</div>
+            			</div>
+					</md-card-title>
+            	<md-card-title-media>
+						<div layout="row" layout-sm="column" layout-xs="column" flex="100" flex-sm="100" layout-margin>
+							<div layout-sm="row" layout-xs="row">
+								<div flex="40" flex-sm="40" flex-xs="60" layout-xs="column" layout-sm="column" layout="column">
+									<div flex ng-show="house.cb6" layout="row" class="photo-slider md-media-lg card-media foto">
+										<img ng-src="{{house.fotos[0]}}" />
+            	  					</div>
+				  					<div flex ng-hide="house.cb6" layout="row" class="photo-slider md-media-lg card-media foto">
+				  						<img ng-src="{{house.fotos[1]}}" />
+            	  					</div>
+				  					<md-switch ng-model="house.cb6" aria-label="Switch 6" ng-change="onChange(house.cb6)">
+				  					</md-switch>
+            					</div>
+            					<div hide-lg hide-sm hide-md hide-xl layout-xs="row">
+            						<div layout-xs="column">
+	            						<p></p>
+										<div ng-show="house.prezzo_letto!=''" flex-offset-xs="20" layout="row">
+												<span class="md-headline-1">{{house.prezzo_letto}}</span>
+												<span class="md-subhead-1">letto</span>
+										</div>
+										<div ng-show="house.prezzo_divano!=''" flex-offset-xs="20" layout="row">
+											<span class="md-headline-1">{{house.prezzo_divano}}</span>
+											<span class="md-subhead-1">divano</span>
+										</div>
+									</div>
+									<div layout="column"flex-offset-xs="20">
+										<p></p>
+										<i class="material-icons material-icons-euro md-24">euro_symbol</i></md-icon>
+									</div>
+								</div>
+							</div>
+							<div layout="column" flex="60" flex-xs="100" flex-sm="100">
+								<div layout="row" flex="100">
+									<div layout="column" flex="50">
+									   <md-list-item class="md-2-line md-no-proxy-1">
+									   		<div class="md-list-item-text" layout="column">
+									   			<h3>Disponibile: </h3>
+									   			<p>{{house.posto}}</p>
+		    	        	    	    	</div>
+									   </md-list-item>
+<!--
+									   <md-list-item class="md-2-line md-no-proxy-1">
+									   		<div class="md-list-item-text" layout="column">
+									   			<h3>Prezzo: </h3>
+									   			<p>{{house.prezzo}}</p>
+            	        			   		</div>
+									   </md-list-item>
+-->                                    
+                                        <p></p>
+									   <md-list-item class="md-2-line md-no-proxy-1">
+									   		<div class="md-list-item-text" layout="column">
+									   			<h3>Coinquilini: </h3>
+									   			<p>{{house.coinquilini}}</p>
+		    	        	    	    	</div>
+									   </md-list-item>
+		    	    				</div>
+		    	    				
+									<div layout="column" flex="50">
+				        	    	   <md-list-item class="md-2-line md-no-proxy-1">
+										   	<div class="md-list-item-text" layout="column">
+									   			<h3>Disponibile dal: </h3>
+									   			<p>{{house.data_di_inizio.data_da_mostrare}}</p>
+		    	        	    	    	</div>
+									   </md-list-item>
+									   <p></p>
+									   <md-list-item class="md-2-line md-no-proxy-1">
+									  	 	<div class="md-list-item-text" layout="column">
+									   			<h3>Termina il: </h3>
+									   			<p>{{house.data_di_inizio.data_da_mostrare_1}}</p>
+		    	        	    	    	</div>
+									   </md-list-item>
+<!--
+									   <md-list-item ng-hide="true" class="md-2-line md-no-proxy-1">
+									   		<div class="md-list-item-text" layout="column">
+									   			<h3>Data di disponibilita: </h3>
+									   			<p>{{house.data_disponibile}}</p>
+		    	        	    	    	</div>
+									   </md-list-item>
+-->
+		    	        			</div>
+								</div>
+								<md-divider></md-divider>
+								<div layout="row">
+									<div layout="column">
+										<md-list-item class="md-2-line md-no-proxy-1">
+											<div class="md-list-item-text" layout="column">
+												<h3>Tag: </h3>
+												<p>{{house.tag}}</p>
+		    	                			</div>
+										</md-list-item>
+									</div>
+		    	    			</div>
+		    	    		</div>
+						</div>
+            	</md-card-title-media>
+            	<md-card-actions layout="column">
+            	<div flex-offset-xs="60" flex-offset-sm="70" flex-offset="80" flex-xs="20"  flex="20">
+            	    <md-button class="md-raised" ng-mouseover="showAlert($event)">
+            	    	<a class="a-stile" href="mailto:info@lensooni.it?subject=Richiesta di Contatto&body=Ciao Lensooni, sono lo studente con email universitaria:                                              
+	            	    	                                               . Ti scrivo per chiederti il contatto della casa con codice identificativo:">Contatta!
+            	    	</a>
+             	    </md-button>
+            	</div>
+            	</md-card-actions>
+		    </md-card>
+		</div>
+    </body>
 </html>
+
+
+	<!-- <body ng-app="ProjectApp" ng-controller="MyCtrl">
+		<div class="md-inline-form" layout="row" ng-cloak>
+			<p flex="20"></p>
+			<md-input-container>
+                <label>Cerca per città</label>
+                <input ng-model="searchText">
+            </md-input-container>
+   		</div>
+		<div ng-cloak >
+                <md-content class="md-padding" layout-xs="column" layout="row">
+                    <div flex-xs flex-gt-xs="100" layout="column">
+                        <md-card ng-repeat="house in houses | filter:searchText" md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                            <md-card-title>
+                                    <md-card-title-text flex="30">
+                                        <span class="md-headline">{{house.citta}}</span>
+                                        <span class="md-subhead">{{house.nome}}</span>
+                                    </md-card-title-text>
+                                    <md-card-title-media flex="35" layout="row">
+                                        <img ng-repeat="foto in house.fotos" style="height: 200px" ng-src={{foto}} />
+                                    </md-card-title-media>
+                            </md-card-title>
+                            <md-card-content>
+                                <p>Posto disponibile: {{house.posto}}</p>
+                                <p>Data di disponibilita: {{house.data}}</p>
+                                <p>Tag della casa: {{house.tag}}</p>
+                                <p>Prezzo a posto: {{house.prezzo}}</p>
+                                <p>Numero coinquilini: {{house.coinquilini}}</p>
+                            </md-card-content>
+                            <div layout="row">
+	                            <p flex="60"></p>
+	                            <p> CONTATTA LENSOONI PER RICHIEDERE IL CONTATTO!</p>
+                            </div>
+                                <md-card-actions layout="row" layout-align="end center">
+                                    <a style="color: #ffffff;" href="mailto:info@lensooni.it">
+	                                    <md-button>Contatta <br>via mail</md-button>
+                                    </a>
+                                    <a style="color: #ffffff;" href="https://www.facebook.com/giacomo.chelli.X">
+                                        <md-button>Contatta <br>via Facebook</md-button>
+                                    </a>
+                                </md-card-actions>
+                            </div>
+                        </md-card>
+                    </div>
+                </md-content>
+		</div>
+	</body>
+</html>        
+     
+-->
