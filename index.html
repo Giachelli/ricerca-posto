@@ -104,53 +104,53 @@
 						<h1 class="md-toolbar-tools">Cerca posto</h1>
 					</md-toolbar>
 					<md-content layout-xs="column" layout-padding ng-controller="LeftCtrl">
-								<md-input-container>
-									<label>Citta</label>
-									<input ng-model="searchText">
-								</md-input-container>
-	   	            	    	<md-input-container>
-                		            <label>Posto</label>
-									<md-select name="Posti Letto" ng-model="searchPosto">
-                		                <md-option><em></em></md-option>
-										<md-option ng-repeat="posto in posti" ng-value="posto">
-											{{posto}}
-										</md-option>
-									</md-select>
-								</md-input-container>
-								<md-input-container flex-xs="20">
-									<label>Giorno</label>
-									<md-select name="Posti Letto" ng-model="searchMese.giorno">
-										<md-option><em></em></md-option>
-										<md-option ng-repeat="giorno in giorni" ng-value="giorno">
-											{{giorno}}
-										</md-option>
-									</md-select>
-								</md-input-container>
-								<md-input-container flex-xs="20">
-									<label>Mese</label>
-									<md-select name="Posti Letto" ng-model="searchMese.mese">
-										<md-option><em></em></md-option>
-										<md-option ng-repeat="mese in mesi" ng-value="mese">
-											{{mese}}
-										</md-option>
-									</md-select>
-								</md-input-container>
-								<md-input-container flex-xs="20">
-									<label>Anno</label>
-									<md-select name="Posti Letto" ng-model="searchMese.anno">
-										<md-option><em></em></md-option>
-										<md-option ng-repeat="anno in anni" ng-value="anno">
-										{{anno}}
-										</md-option>
-									</md-select>
-								</md-input-container>
-							<md-button ng-click="changeResearch()"  hide-gt-md>
-								Cerca casa
-							</md-button>
-							<p hide show-gt-md>
-								This sidenav is locked open on your device. To go back to the default behavior,
-								narrow your display.
-        					</p>
+						<md-input-container>
+							<label>Citta</label>
+							<input ng-model="searchText">
+						</md-input-container>
+	   	            	<md-input-container>
+                		    <label>Posto</label>
+							<md-select name="Posti Letto" ng-model="searchPosto">
+                		        <md-option><em></em></md-option>
+								<md-option ng-repeat="posto in posti" ng-value="posto">
+									{{posto}}
+								</md-option>
+							</md-select>
+						</md-input-container>
+						<md-input-container flex-xs="20">
+							<label>Giorno</label>
+							<md-select name="Posti Letto" ng-model="searchMese.giorno">
+								<md-option><em></em></md-option>
+								<md-option ng-repeat="giorno in giorni" ng-value="giorno">
+									{{giorno}}
+								</md-option>
+							</md-select>
+						</md-input-container>
+						<md-input-container flex-xs="20">
+							<label>Mese</label>
+							<md-select name="Posti Letto" ng-model="searchMese.mese">
+								<md-option><em></em></md-option>
+								<md-option ng-repeat="mese in mesi" ng-value="mese">
+									{{mese}}
+								</md-option>
+							</md-select>
+						</md-input-container>
+						<md-input-container flex-xs="20">
+							<label>Anno</label>
+							<md-select name="Posti Letto" ng-model="searchMese.anno">
+								<md-option><em></em></md-option>
+								<md-option ng-repeat="anno in anni" ng-value="anno">
+									{{anno}}
+								</md-option>
+							</md-select>
+						</md-input-container>
+						<md-button ng-click="changeResearch()"  hide-gt-md>
+							Cerca casa
+						</md-button>
+						<p hide show-gt-md>
+							This sidenav is locked open on your device. To go back to the default behavior,
+							narrow your display.
+        				</p>
 					</md-content>
 				</md-sidenav>
 				<div flex="100">
@@ -220,10 +220,6 @@
 								</div>
 							</div>
 							<md-card-content layout="column" layout-xs="column" flex="60" flex-xs="100" flex-sm="100">
-								<p> ciao</p>
-								<p> ciao</p>
-								<p> ciao</p>
-								<p> ciao</p>
 								<md-list>
 									<div layout="row" flex="100">
 										<div layout="column" flex="50">
