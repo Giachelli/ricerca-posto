@@ -168,19 +168,19 @@
 				</div>
     		</div>
 
-	        <div layout-wrap flex-xs="auto" flex-sm="70" flex="70" layout="row">
+	        <div layout-wrap flex-xs="95" flex-sm="70" flex="70" layout="row">
 	        	<md-card flex="100"  ng-repeat="house in houses | filter:searchText | filter:searchPosto | filter: dataDisp">
             		<md-card-title style="background-color: #ff8a65">
-						<div flex-xs="auto" flex="40">
+						<div flex-xs="50" flex="40">
 							<md-card-title-text>
             	    			<span class="md-headline">{{house.citta}}</span>
 								<span class="md-subhead">{{house.nome}}</span>
 							</md-card-title-text>
             			</div>
-						<div layout="row" flex-xs="auto" flex-sm="35" flex="40">
+						<div layout="row" flex-xs="50" flex-sm="35" flex="40">
 							<span class="md-headline">id: {{house.codice_id}} </span>
             			</div>
-						<div hide-xs layout="row" flex="20" flex-xs="auto">
+						<div hide-xs layout="row" flex="20" flex-xs="40">
 							<div layout="column">
 								<div ng-show="house.prezzo_letto!=''" layout="row">
 									<span class="md-headline">{{house.prezzo_letto}}</span>
@@ -199,7 +199,7 @@
             		<div>
 						<div layout="row" layout-sm="column" layout-xs="column" flex="100" flex-sm="100" layout-padding>
 							<div layout-sm="row" layout-xs="row">
-								<md-card-title-media flex="40" flex-sm="40" flex-xs="auto" layout-xs="column" layout-sm="column" layout="column">
+								<md-card-title-media flex="40" flex-sm="40" flex-xs="60" layout-xs="column" layout-sm="column" layout="column">
 									<div flex ng-show="house.cb6" layout="row" class="photo-slider md-media-lg card-media foto">
 										<img class="md-media-lg" ng-src="{{house.fotos[0]}}" />
             	  					</div>
@@ -227,7 +227,7 @@
 									</div>
 								</div>
 							</div>
-							<md-card-content layout="column" layout-xs="column" flex="60" flex-xs="auto" flex-sm="100">
+							<md-card-content layout="column" layout-xs="column" flex="60" flex-xs="80" flex-sm="100">
 								<p> ciao</p>
 								<p> ciao</p>
 								<p> ciao</p>
