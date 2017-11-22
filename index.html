@@ -105,13 +105,13 @@
 					</md-toolbar>
 					<md-content layout-padding ng-controller="LeftCtrl">
 						<div layout="column">
-							<div flex-offset="20" flex="80"ng-cloak>
+							<div flex-offset-xs="20" flex-xs="80"ng-cloak>
 								<md-input-container>
 									<label>Citta</label>
 									<input ng-model="searchText">
 								</md-input-container>
    							</div>
-   							<div flex-offset="20" flex="80"ng-cloak>
+   							<div flex-offset-xs="20" flex-xs="80"ng-cloak>
 	   	            	    	<md-input-container>
                 		            <label>Posto</label>
 									<md-select name="Posti Letto" ng-model="searchPosto">
@@ -122,7 +122,7 @@
 									</md-select>
 								</md-input-container>
    							</div>
-   							<div layout-xs="column" flex-offset="20" flex-xs="40">
+   							<div layout-xs="column" flex-offset-xs="20" flex-xs="40">
 								<md-input-container flex-xs="20">
 									<label>Giorno</label>
 									<md-select name="Posti Letto" ng-model="searchMese.giorno">
@@ -151,9 +151,11 @@
 									</md-select>
 								</md-input-container>
 							</div>
+							<div>
 							<md-button ng-click="changeResearch()"  hide-gt-md>
 								Cerca casa
 							</md-button>
+							</div>
 							<p hide show-gt-md>
 								This sidenav is locked open on your device. To go back to the default behavior,
 								narrow your display.
