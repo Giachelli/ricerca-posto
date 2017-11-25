@@ -293,6 +293,139 @@
 					</div>
 				</md-card>
 		    </div>
+		    <div hide-lg hide-md hide-sm layout-wrap flex-xs="95" layout="row">
+	        	<md-card flex="100"  ng-repeat="house in houses | filter:searchText | filter:searchPosto | filter: dataDisp">
+            		<md-card-title style="background-color: #ff8a65">
+						<div flex-xs="50">
+							<md-card-title-text>
+            	    			<span class="md-headline">{{house.citta}}</span>
+								<span class="md-subhead">{{house.nome}}</span>
+							</md-card-title-text>
+            			</div>
+						<div layout="row" flex-xs="50">
+							<span class="md-headline">id: {{house.codice_id}} </span>
+            			</div>
+						<div hide-xs layout="row" flex-xs="40">
+							<div layout="column">
+								<div ng-show="house.prezzo_letto!=''" layout="row">
+									<span class="md-headline">{{house.prezzo_letto}}</span>
+									<span class="md-subhead">letto</span>
+								</div>
+								<div ng-show="house.prezzo_divano!=''" layout="row">
+									<span class="md-headline">{{house.prezzo_divano}}</span>
+									<span class="md-subhead">divano</span>
+								</div>
+							</div>
+							<div layout="column">
+								<i class="material-icons md-48">euro_symbol</i>
+	            			</div>
+            			</div>
+            		</md-card-title>
+            		<div>
+						<div layout-xs="column" flex-xs="100" layout-padding>
+							<div layout-xs="row">
+								<md-card-title-media flex-xs="60" layout-xs="column">
+									<div flex ng-show="house.cb6" layout="row" class="photo-slider md-media-lg card-media foto">
+										<img class="md-media-lg" ng-src="{{house.fotos[0]}}" />
+            	  					</div>
+				  					<div flex ng-hide="house.cb6" layout="row" class="photo-slider md-media-lg card-media foto">
+				  						<img class="md-media-lg" ng-src="{{house.fotos[1]}}" />
+            	  					</div>
+				  					<md-switch ng-model="house.cb6" aria-label="Switch 6" ng-change="onChange(house.cb6)">
+				  					</md-switch>
+            					</md-card-title-media>
+            					<div hide-lg hide-sm hide-md hide-xl layout-xs="row">
+            						<div layout-xs="column">
+	            						<p></p>
+										<div ng-show="house.prezzo_letto!=''" flex-offset-xs="20" layout-xs="row">
+												<span class="md-headline-1">{{house.prezzo_letto}}</span>
+												<span class="md-subhead-1">letto</span>
+										</div>
+										<div ng-show="house.prezzo_divano!=''" flex-offset-xs="20" layout-xs="row">
+											<span class="md-headline-1">{{house.prezzo_divano}}</span>
+											<span class="md-subhead-1">divano</span>
+										</div>
+									</div>
+									<div layout="column"flex-offset-xs="20">
+										<p></p>
+										<i class="material-icons material-icons-euro md-24">euro_symbol</i></md-icon>
+									</div>
+								</div>
+							</div>
+							<md-card-content layout-xs="column" flex-xs="100">
+								<md-list>
+									<div layout="row" flex-xs="100">
+										<div layout="column" flex-xs="50">
+										   <md-list-item class="md-2-line md-no-proxy-1">
+										   		<div class="md-list-item-text" layout="column">
+										   			<h3>Disponibile: </h3>
+										   			<p>{{house.posto}}</p>
+		    	        		    	    	</div>
+										   </md-list-item>
+<!--							
+										   <md-list-item class="md-2-line md-no-proxy-1">
+										   		<div class="md-list-item-text" layout="column">
+										   			<h3>Prezzo: </h3>
+										   			<p>{{house.prezzo}}</p>
+            	        				   		</div>
+										   </md-list-item>
+-->                         	            <p></p>
+                            	            <md-list-item class="md-2-line md-no-proxy-1">
+										   		<div class="md-list-item-text" layout="column">
+										   			<h3>Coinquilini: </h3>
+										   			<p>{{house.coinquilini}}</p>
+		    	        		    	    	</div>
+											</md-list-item>
+		    	    					</div>
+		    	    					
+										<div layout="column" flex-xs="50">
+				        		    	    <md-list-item class="md-2-line md-no-proxy-1">
+											   	<div class="md-list-item-text" layout="column">
+										   			<h3>Disponibile dal: </h3>
+										   			<p>{{house.data_di_inizio.data_da_mostrare}}</p>
+		    	        		    	    	</div>
+										    </md-list-item>
+										    <p></p>
+										    <md-list-item class="md-2-line md-no-proxy-1">
+										  	 	<div class="md-list-item-text" layout="column">
+										   			<h3>Termina il: </h3>
+										   			<p>{{house.data_di_inizio.data_da_mostrare_1}}</p>
+		    	        		    	    	</div>
+										    </md-list-item>
+<!--							
+										   <md-list-item ng-hide="true" class="md-2-line md-no-proxy-1">
+										   		<div class="md-list-item-text" layout="column">
+										   			<h3>Data di disponibilita: </h3>
+										   			<p>{{house.data_disponibile}}</p>
+		    	        		    	    	</div>
+										   </md-list-item>
+-->								
+		    	        				</div>
+									</div>
+									<div layout-xs="row">
+										<div layout-xs="column">
+											<md-divider></md-divider>
+											<md-list-item class="md-2-line md-no-proxy-1">
+												<div class="md-list-item-text" layout-xs="column">
+													<h3>Tag: </h3>
+													<p>{{house.tag}}</p>
+		    	            	    			</div>
+											</md-list-item>
+										</div>
+									</div>
+								</md-list>
+							</md-card-content>
+						</div>
+						<md-card-actions layout-xs="row" layout-align="center center">
+							<md-button class="md-raised" ng-mouseover="showAlert($event)">
+								<a class="a-stile" href="mailto:info@lensooni.it?subject=Richiesta di Contatto&body=Ciao Lensooni, sono lo studente con email universitaria:                                              
+	            	    	                                               . Ti scrivo per chiederti il contatto della casa con codice identificativo:">Contatta!
+            	    			</a>
+							</md-button>
+						</md-card-actions>
+					</div>
+				</md-card>
+		    </div>
 		</div>
     </body>
 </html>
