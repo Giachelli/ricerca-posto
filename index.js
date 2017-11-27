@@ -1,8 +1,12 @@
 var app = angular.module('ProjectApp', ['ngMaterial','ngMessages']);
 app.controller('MyCtrl', ['$scope', '$mdDialog', '$timeout', '$log', '$mdSidenav',  function($scope,$mdDialog,$timeout,$log,$mdSidenav){
 
- 	$scope.searchText="";
- 	$scope.searchPosto="";
+ 	$scope.searchText={
+	 	nome:""
+ 	};
+ 	$scope.searchPosto={
+	 	posto:""
+ 	};
  	$scope.searchMese={
  		button:0,
  		giorno:"",
@@ -12,7 +16,7 @@ app.controller('MyCtrl', ['$scope', '$mdDialog', '$timeout', '$log', '$mdSidenav
  	$scope.searchMese_1="";
  	$scope.searchMeseHelp="";
  	$scope.dataDisp="false";
- 	$scope.posti=["Letto", "Divano", "Posti per terra"];
+ 	$scope.posti=["Letto", "Divano", "Per terra"];
  	
  	$scope.mesi_1=['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
     $scope.mesi=['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
@@ -119,8 +123,8 @@ app.controller('MyCtrl', ['$scope', '$mdDialog', '$timeout', '$log', '$mdSidenav
 		$scope.searchMese.mese="";
 		$scope.searchMese.anno="";
 		$scope.dataDisp="false";
-		$scope.searchText="";
-		$scope.searchPosto="";
+		$scope.searchText.nome="";
+		$scope.searchPosto.posto="";
 	};
 
 	$scope.$watch('searchMese.button', function(newValue, oldValue){

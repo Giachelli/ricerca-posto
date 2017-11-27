@@ -25,7 +25,7 @@
 		        		<div layout="row" flex-offset="20" flex-sm="70" flex="80"ng-cloak>
 							<md-input-container>
 								<label>Citta</label>
-								<input ng-model="searchText">
+								<input ng-model="searchText.nome">
 							</md-input-container>
    						</div>
    					</md-card-content>
@@ -35,7 +35,7 @@
    						<div layout="row" flex-offset="20" flex="80"ng-cloak>
 	   	                	<md-input-container>
                 	            <label>Posto</label>
-								<md-select name="Posti Letto" ng-model="searchPosto">
+								<md-select name="Posti Letto" ng-model="searchPosto.posto">
                 	                <md-option><em></em></md-option>
 									<md-option ng-repeat="posto in posti" ng-value="posto">
 										{{posto}}
@@ -51,7 +51,7 @@
 							<div layout-sm="column" layout="column" flex-offset="20" flex="40">
 								<md-input-container layout="row" flex-sm="10" flex="20">
 									<label>Giorno</label>
-									<md-select name="Posti Letto" ng-model="searchMese.giorno">
+									<md-select name="Giorno" ng-model="searchMese.giorno">
 										<md-option><em></em></md-option>
 										<md-option ng-repeat="giorno in giorni" ng-value="giorno">
 											{{giorno}}
@@ -60,7 +60,7 @@
 								</md-input-container>
 								<md-input-container layout="row" flex="20">
 									<label>Mese</label>
-									<md-select name="Posti Letto" ng-model="searchMese.mese">
+									<md-select name="Mese" ng-model="searchMese.mese">
 										<md-option><em></em></md-option>
 										<md-option ng-repeat="mese in mesi" ng-value="mese">
 											{{mese}}
@@ -69,7 +69,7 @@
 								</md-input-container>
 								<md-input-container layout="row" flex="20">
 									<label>Anno</label>
-									<md-select name="Posti Letto" ng-model="searchMese.anno">
+									<md-select name="Anno" ng-model="searchMese.anno">
 										<md-option><em></em></md-option>
 										<md-option ng-repeat="anno in anni" ng-value="anno">
 											{{anno}}
@@ -105,12 +105,12 @@
 					</md-toolbar>
 					<md-content layout-xs="column" layout-padding ng-controller="LeftCtrl">
 						<md-input-container>
-							<label>Citta</label>
-							<input ng-model="searchText">
-						</md-input-container>
+								<label>Citta</label>
+								<input ng-model="searchText.nome">
+							</md-input-container>
 	   	            	<md-input-container>
                 		    <label>Posto</label>
-							<md-select name="Posti Letto" ng-model="searchPosto">
+							<md-select name="Posti Letto" ng-model="searchPosto.posto">
                 		        <md-option><em></em></md-option>
 								<md-option ng-repeat="posto in posti" ng-value="posto">
 									{{posto}}
@@ -119,7 +119,7 @@
 						</md-input-container>
 						<md-input-container flex-xs="20">
 							<label>Giorno</label>
-							<md-select name="Posti Letto" ng-model="searchMese.giorno">
+							<md-select name="Giorno" ng-model="searchMese.giorno">
 								<md-option><em></em></md-option>
 								<md-option ng-repeat="giorno in giorni" ng-value="giorno">
 									{{giorno}}
@@ -128,7 +128,7 @@
 						</md-input-container>
 						<md-input-container flex-xs="20">
 							<label>Mese</label>
-							<md-select name="Posti Letto" ng-model="searchMese.mese">
+							<md-select name="Mese" ng-model="searchMese.mese">
 								<md-option><em></em></md-option>
 								<md-option ng-repeat="mese in mesi" ng-value="mese">
 									{{mese}}
@@ -137,7 +137,7 @@
 						</md-input-container>
 						<md-input-container flex-xs="20">
 							<label>Anno</label>
-							<md-select name="Posti Letto" ng-model="searchMese.anno">
+							<md-select name="Anno" ng-model="searchMese.anno">
 								<md-option><em></em></md-option>
 								<md-option ng-repeat="anno in anni" ng-value="anno">
 									{{anno}}
@@ -161,7 +161,7 @@
     		</div>
 
 	        <div hide-xs hide-sm layout-wrap flex-xs="95" flex-sm="70" flex="70" layout="row">
-	        	<md-card flex="100"  ng-repeat="house in houses | filter:searchText | filter:searchPosto | filter: dataDisp">
+	        	<md-card flex="100"  ng-repeat="house in houses | filter:searchText.nome | filter:searchPosto.posto | filter: dataDisp">
             		<md-card-title style="background-color: #ff8a65">
 						<div flex-xs="50" flex="40">
 							<md-card-title-text>
@@ -294,7 +294,7 @@
 				</md-card>
 		    </div>
 		    <div hide-lg hide-md layout-wrap flex-xs="95" flex-sm="95" layout="row">
-	        	<md-card flex="100"  ng-repeat="house in houses | filter:searchText | filter:searchPosto | filter: dataDisp">
+	        	<md-card flex="100"  ng-repeat="house in houses | filter:searchText.nome | filter:searchPosto.posto | filter: dataDisp">
             		<md-card-title style="background-color: #ff8a65">
 						<div flex-sm="30" flex-xs="50">
 							<md-card-title-text>
@@ -443,3 +443,4 @@
 		</div>
     </body>
 </html>
+
