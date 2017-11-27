@@ -160,7 +160,7 @@
 				</div>
     		</div>
 
-	        <div hide-xs layout-wrap flex-xs="95" flex-sm="70" flex="70" layout="row">
+	        <div hide-xs hide-sm layout-wrap flex-xs="95" flex-sm="70" flex="70" layout="row">
 	        	<md-card flex="100"  ng-repeat="house in houses | filter:searchText | filter:searchPosto | filter: dataDisp">
             		<md-card-title style="background-color: #ff8a65">
 						<div flex-xs="50" flex="40">
@@ -293,19 +293,19 @@
 					</div>
 				</md-card>
 		    </div>
-		    <div hide-lg hide-md hide-sm layout-wrap flex-xs="95" layout="row">
+		    <div hide-lg hide-md layout-wrap flex-xs="95" flex-sm="95" layout="row">
 	        	<md-card flex="100"  ng-repeat="house in houses | filter:searchText | filter:searchPosto | filter: dataDisp">
             		<md-card-title style="background-color: #ff8a65">
-						<div flex-xs="50">
+						<div flex-sm="30" flex-xs="50">
 							<md-card-title-text>
             	    			<span class="md-headline">{{house.citta}}</span>
 								<span class="md-subhead">{{house.nome}}</span>
 							</md-card-title-text>
             			</div>
-						<div layout="row" flex-xs="50">
+						<div layout="row" flex-xs="50" flex-sm="30">
 							<span class="md-headline">id: {{house.codice_id}} </span>
             			</div>
-						<div hide-xs layout="row" flex-xs="40">
+						<div hide-xs layout="row" flex-xs="40" flex-offset-sm="10" flex-sm="30">
 							<div layout="column">
 								<div ng-show="house.prezzo_letto!=''" layout="row">
 									<span class="md-headline">{{house.prezzo_letto}}</span>
@@ -322,8 +322,8 @@
             			</div>
             		</md-card-title>
             		<div>
-						<div layout-xs="row" layout-padding>
-								<md-card-title-media flex-xs="60" layout-xs="column">
+						<div layout-xs="row" layout-sm="row" layout-padding>
+								<md-card-title-media flex-xs="60" flex-sm="40" layout-xs="column" layout-sm="column">
 									<div flex ng-show="house.cb6" layout="row" class="photo-slider md-media-lg card-media foto">
 										<img class="md-media-lg" ng-src="{{house.fotos[0]}}" />
             	  					</div>
@@ -333,7 +333,7 @@
 				  					<md-switch ng-model="house.cb6" aria-label="Switch 6" ng-change="onChange(house.cb6)">
 				  					</md-switch>
             					</md-card-title-media>
-            					<div hide-lg hide-sm hide-md hide-xl layout-xs="row">
+            					<div hide-sm layout-xs="row">
             						<div layout-xs="column">
 	            						<p></p>
 										<div ng-show="house.prezzo_letto!=''" flex-offset-xs="20" layout-xs="row">
@@ -351,10 +351,10 @@
 									</div>
 								</div>
 							</div>
-							<md-card-content layout-xs="column" flex-xs="100">
+							<md-card-content layout-xs="column" layout-sm="column" flex-xs="100" flex-sm="100">
 								<md-list>
-									<div layout="row" flex-xs="100">
-										<div layout="column" flex-xs="50">
+									<div layout="row" flex-xs="100" flex-sm="100">
+										<div layout="column" flex-xs="50" flex-sm="50">
 										   <md-list-item class="md-2-line md-no-proxy-1">
 										   		<div class="md-list-item-text" layout="column">
 										   			<h3>Disponibile: </h3>
@@ -377,7 +377,7 @@
 											</md-list-item>
 		    	    					</div>
 		    	    					
-										<div layout="column" flex-xs="50">
+										<div layout="column" flex-xs="50" flex-sm="50">
 				        		    	    <md-list-item class="md-2-line md-no-proxy-1">
 											   	<div class="md-list-item-text" layout="column">
 										   			<h3>Disponibile dal: </h3>
@@ -401,8 +401,8 @@
 -->								
 		    	        				</div>
 									</div>
-									<div layout-xs="row">
-										<div layout-xs="column">
+									<div layout-xs="row" layout-sm="row">
+										<div layout-xs="column" layout-sm="column">
 											<md-divider></md-divider>
 											<md-list-item class="md-2-line md-no-proxy-1">
 												<div class="md-list-item-text" layout-xs="column">
@@ -414,7 +414,7 @@
 									</div>
 								</md-list>
 							</md-card-content>
-						<md-card-actions layout-xs="row" layout-align="center center">
+						<md-card-actions layout-xs="row" layout-sm="row" layout-align="center center">
 							<md-button class="md-raised" ng-mouseover="showAlert($event)">
 								<a class="a-stile" href="mailto:info@lensooni.it?subject=Richiesta di Contatto&body=Ciao Lensooni, sono lo studente con email universitaria:                                              
 	            	    	                                               . Ti scrivo per chiederti il contatto della casa con codice identificativo:">Contatta!
