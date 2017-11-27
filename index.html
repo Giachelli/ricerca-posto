@@ -189,9 +189,8 @@
             			</div>
             		</md-card-title>
             		<div>
-						<div layout="row" layout-sm="column" layout-xs="column" flex="100" flex-sm="100" layout-padding>
-							<div layout-sm="row" layout-xs="row">
-								<md-card-title-media flex="40" flex-sm="40" flex-xs="60" layout-xs="column" layout-sm="column" layout="column">
+						<div layout-xs="row" layout-padding>
+								<md-card-title-media flex-xs="60" layout-xs="column">
 									<div flex ng-show="house.cb6" layout="row" class="photo-slider md-media-lg card-media foto">
 										<img class="md-media-lg" ng-src="{{house.fotos[0]}}" />
             	  					</div>
@@ -204,11 +203,11 @@
             					<div hide-lg hide-sm hide-md hide-xl layout-xs="row">
             						<div layout-xs="column">
 	            						<p></p>
-										<div ng-show="house.prezzo_letto!=''" flex-offset-xs="20" layout="row">
+										<div ng-show="house.prezzo_letto!=''" flex-offset-xs="20" layout-xs="row">
 												<span class="md-headline-1">{{house.prezzo_letto}}</span>
 												<span class="md-subhead-1">letto</span>
 										</div>
-										<div ng-show="house.prezzo_divano!=''" flex-offset-xs="20" layout="row">
+										<div ng-show="house.prezzo_divano!=''" flex-offset-xs="20" layout-xs="row">
 											<span class="md-headline-1">{{house.prezzo_divano}}</span>
 											<span class="md-subhead-1">divano</span>
 										</div>
@@ -219,10 +218,10 @@
 									</div>
 								</div>
 							</div>
-							<md-card-content layout="column" layout-xs="column" flex="60" flex-xs="100" flex-sm="100">
+							<md-card-content layout-xs="column" flex-xs="100">
 								<md-list>
-									<div layout="row" flex="100">
-										<div layout="column" flex="50">
+									<div layout="row" flex-xs="100">
+										<div layout="column" flex-xs="50">
 										   <md-list-item class="md-2-line md-no-proxy-1">
 										   		<div class="md-list-item-text" layout="column">
 										   			<h3>Disponibile: </h3>
@@ -245,7 +244,7 @@
 											</md-list-item>
 		    	    					</div>
 		    	    					
-										<div layout="column" flex="50">
+										<div layout="column" flex-xs="50">
 				        		    	    <md-list-item class="md-2-line md-no-proxy-1">
 											   	<div class="md-list-item-text" layout="column">
 										   			<h3>Disponibile dal: </h3>
@@ -269,11 +268,11 @@
 -->								
 		    	        				</div>
 									</div>
-									<div layout="row">
-										<div layout="column">
+									<div layout-xs="row">
+										<div layout-xs="column">
 											<md-divider></md-divider>
 											<md-list-item class="md-2-line md-no-proxy-1">
-												<div class="md-list-item-text" layout="column">
+												<div class="md-list-item-text" layout-xs="column">
 													<h3>Tag: </h3>
 													<p>{{house.tag}}</p>
 		    	            	    			</div>
@@ -282,7 +281,6 @@
 									</div>
 								</md-list>
 							</md-card-content>
-						</div>
 						<md-card-actions layout="row" layout-align="center center">
 							<md-button class="md-raised" ng-mouseover="showAlert($event)">
 								<a class="a-stile" href="mailto:info@lensooni.it?subject=Richiesta di Contatto&body=Ciao Lensooni, sono lo studente con email universitaria:                                              
