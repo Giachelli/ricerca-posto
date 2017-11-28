@@ -35,7 +35,7 @@ app.controller('MyCtrl', ['$scope', '$mdDialog', '$timeout', '$log', '$mdSidenav
 		codice_id:'AN0001',
 		cb6:false,
 		message:"1",
-		fotos: ["img/lensooni.001.jpg","img/lensooni.002.jpg"],
+		fotos: ["img/lensooni.001-min.jpg","img/lensooni.002-min.jpg"],
 		posto: " 1 Letto, 1 divano",
 		data_di_inizio: {"prima_data":"2017-11-20",
 			             "seconda_data":"2018-06-30",
