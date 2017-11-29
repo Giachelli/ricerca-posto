@@ -32,6 +32,7 @@ app.controller('MyCtrl', ['$scope', '$mdDialog', '$timeout', '$log', '$mdSidenav
  	var houses=[{
 	 	nome: "Eros",
 		citta: "Ancona",
+		zona:"Centro",
 		codice_id:'AN0001',
 		cb6:false,
 		message:"1",
